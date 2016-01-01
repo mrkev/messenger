@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Preferences</title>
+  <style>
+  body {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    text-align: center;
+  }
+  form {
+    text-align: left;
+    display: inline-block;
+  }
+  </style>
+  <script>
+  'use strict';
+
+  var checkbox_notifications;
+
+  window.setup = function (settings) {
+    settings = JSON.parse(settings);
+    checkbox_notifications.checked = settings.notifications;
+  };
+  
+  window.onload = function () {
+    checkbox_notifications = document.getElementsByName('notifications')[0];
+    checkbox_notifications.onclick = function () {
+      window.postMessageToHost(JSON.stringify({
+        notifications : checkbox_notifications.checked
+      }));
+    };;
+  };
+  </script>
+</head>
+<body>
+  <form>
+    <h3>Notifications</h3>
+    <label>
+      <input
+        type="checkbox"
+        name="notifications">
+      Show notifications
+    </label>
+  </form>
+</body>
+</html>

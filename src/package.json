@@ -1,0 +1,29 @@
+{
+  "name": "Messenger",
+  "longname": "Messenger",
+  "namespace": "com.aylmao.messenger",
+  "description" : "An app for Facebook Messenger",
+  "author" : "Kevin Chavez",
+  "version": "0.1.0",
+  "sources": {
+    "directory": "."
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrkev/messenger.git"
+  },
+
+  "icon": {
+    "osx": [
+      "static/muir_fb512.png",
+      "static/muir_fb16.png"
+    ],
+    "windows": [
+      "static/muir_fb512.png"
+    ]
+  },
+  "dependencies": {
+  },
+  "license": "MIT"
+}
